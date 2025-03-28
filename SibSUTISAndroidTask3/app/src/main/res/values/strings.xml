@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">SibSUTISAndroidTask3</string>
+    <string name="show_toast">Show Toast</string>
+    <string name="toast_text">Прекрасного настроения!</string>
+    <string name="snackbar_text">Сладость или гадость?</string>
+    <string name="boooo">boooo</string>
+    <string name="content">content</string>
+    <string name="change_background">Change Background</string>
+    <string name="show_snackbar">Show Snackbar</string>
+    <string name="enter_number">Введите число от 1 до 3</string>
+    <string name="action_settings">Action Settings</string>
+</resources>

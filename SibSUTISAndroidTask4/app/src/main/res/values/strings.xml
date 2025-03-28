@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">SibSUTISAndroidTask4</string>
+    <string name="action_settings">Action Settings</string>
+    <string name="action_dz">День знаний</string>
+    <string name="action_dp">День программиста</string>
+    <string name="action_ny">Новый Год</string>
+    <string name="action_kt">Kotlin</string>
+</resources>

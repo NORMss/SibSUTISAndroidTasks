@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name" translatable="false">SibSUTISAndroidTask2</string>
+    <string name="logo" translatable="false">logo</string>
+    <string name="enter_username" translatable="false">Enter username</string>
+    <string name="next_activity" translatable="false">Next activity</string>
+    <string name="second_activity" translatable="false">This is the second activity</string>
+    <string name="btn_green" translatable="false">Green</string>
+    <string name="btn_red" translatable="false">Red</string>
+    <string name="btn_yellow" translatable="false">Yellow</string>
+
+    <string name="yellow">You have chosen yellow</string>
+    <string name="green">You have chosen green</string>
+    <string name="red">You have chosen red</string>
+
+    <string name="have_a_nice_day">have a nice day!</string>
+</resources>

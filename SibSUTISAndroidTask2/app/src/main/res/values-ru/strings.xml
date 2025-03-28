@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="yellow">Вы выбрали желтый</string>
+    <string name="green">Вы выбрали зелёный</string>
+    <string name="red">Вы выбрали красный</string>
+
+    <string name="have_a_nice_day">удачного дня!</string>
+</resources>
