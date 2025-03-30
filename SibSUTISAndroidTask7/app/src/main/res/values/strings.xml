@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SibSUTISAndroidTask7</string>
+    <string name="muz">В Android-разработке стили в XML помогают унифицировать внешний вид элементов интерфейса и упрощают поддержку кода. Они определяются в файле res/values/styles.xml и позволяют задавать атрибуты, такие как цвета, размеры шрифтов и отступы, для нескольких элементов сразу. Стили можно наследовать, что облегчает создание вариативных тем.</string>
+    <string name="btn_about">О программе</string>
+    <string name="about">Лабораторная работа №7\nВыполнил: Тимур Санданов</string>
+    <string name="switch_theme">Switch Theme</string>
+</resources>

@@ -1,8 +1,12 @@
 package ru.normno.sibsutisandroidtask8
 
+import android.graphics.Color
+import android.graphics.LinearGradient
+import android.graphics.Shader
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.text.TextPaint
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -30,9 +34,16 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        runTimer()
+        setTextViewColor(
+            textView = binding.tvStopwatch,
+            Color.YELLOW,
+            Color.CYAN,
+            Color.MAGENTA,
+        )
+
         binding.btnStart.setOnClickListener {
             mRunning = true
-            runTimer()
         }
 
         binding.btnStop.setOnClickListener {
@@ -41,27 +52,38 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnReset.setOnClickListener {
             mSec = 0
-            updateUI(binding.tvTime)
         }
     }
 
     private fun runTimer() {
-        handler.post(object : Runnable {
-            override fun run() {
-                if (mRunning) {
-                    mSec++
-                    updateUI(binding.tvTime)
+        val timeTextView = binding.tvTime
+        val handler = Handler(Looper.getMainLooper())
+        handler.post(
+            object : Runnable {
+                override fun run() {
+                    val hours = mSec / 3600
+                    val minutes = (mSec % 3600) / 60
+                    val secs = mSec % 60
+                    val time = "%d:%02d:%02d".format(hours, minutes, secs)
+                    timeTextView.text = time
+                    if (mRunning) {
+                        mSec++
+                    }
+                    handler.postDelayed(this, 1000)
                 }
-                handler.postDelayed(this, 1000)
             }
-        })
+        )
     }
 
-    private fun updateUI(timeTextView: TextView) {
-        val hours = mSec / 3600
-        val minutes = (mSec % 3600) / 60
-        val secs = mSec % 60
-        val time = "%d:%02d:%02d".format(hours, minutes, secs)
-        timeTextView.text = time
+    fun setTextViewColor(textView: TextView, vararg color: Int) {
+        val paint: TextPaint = textView.paint
+        val width = paint.measureText(textView.text.toString())
+        val shader = LinearGradient(
+            0f, 0f, width, textView.textSize,
+            color, null, Shader.TileMode.CLAMP
+        )
+
+        textView.paint.shader = shader
+        textView.setTextColor(color[0])
     }
 }
