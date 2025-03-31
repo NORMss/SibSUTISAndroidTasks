@@ -3,13 +3,13 @@ package ru.normno.sibsutisandroidtask7
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
-import android.view.MenuItem
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import ru.normno.sibsutisandroidtask7.databinding.ActivityMainBinding
+import ru.normno.sibsutisandroidtask7.databinding.UseSwitchBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -33,17 +33,34 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         }
+
+        binding.btnOpenThemesActivity.setOnClickListener {
+            Intent(this, ThemesActivity::class.java).also { intent ->
+                startActivity(intent)
+            }
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.main_menu, menu)
-        return super.onCreateOptionsMenu(menu)
-    }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
+        val itemSwitch = menu?.findItem(R.id.app_bar_switch)
 
-            else -> return super.onOptionsItemSelected(item)
+        itemSwitch?.actionView?.let { actionView ->
+            val switchBinding = UseSwitchBinding.bind(actionView)
+
+            val nightMode = AppCompatDelegate.getDefaultNightMode()
+            switchBinding.mySwitch.isChecked = nightMode == AppCompatDelegate.MODE_NIGHT_YES
+
+            switchBinding.mySwitch.setOnCheckedChangeListener { _, isChecked ->
+                AppCompatDelegate.setDefaultNightMode(
+                    if (isChecked) AppCompatDelegate.MODE_NIGHT_YES
+                    else AppCompatDelegate.MODE_NIGHT_NO
+                )
+                recreate()
+            }
         }
+
+        return super.onCreateOptionsMenu(menu)
     }
 }

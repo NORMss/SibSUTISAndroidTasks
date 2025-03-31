@@ -3,5 +3,15 @@
     <style name="Base.Theme.SibSUTISAndroidTask7" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="windowActionBar">true</item>
+        <item name="windowNoTitle">false</item>
+    </style>
+
+    <style name="MyCustomTheme" parent="android:style/TextAppearance">
+        <item name="android:textColor">#FFF5EE</item>
+        <item name="android:background">#4B0082</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="fontFamily">@font/opensans_regular</item>.
     </style>
 </resources>

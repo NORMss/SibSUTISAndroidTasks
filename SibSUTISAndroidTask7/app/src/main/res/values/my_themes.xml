@@ -1,0 +1,28 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Базовая тема -->
+    <style name="Base.Theme.MyApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Общие атрибуты -->
+        <item name="android:statusBarColor">?attr/colorPrimary</item>
+        <item name="android:navigationBarColor">?attr/colorPrimary</item>
+        <item name="windowActionBar">true</item>
+        <item name="windowNoTitle">false</item>
+    </style>
+
+    <!-- Светлая тема -->
+    <style name="Theme.MyApp.Light" parent="Base.Theme.MyApp">
+        <item name="colorPrimary">@color/light_primary</item>
+        <item name="colorPrimaryVariant">@color/light_primary_variant</item>
+        <item name="colorSecondary">@color/light_secondary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <!-- Темная тема -->
+    <style name="Theme.MyApp.Dark" parent="Base.Theme.MyApp">
+        <item name="colorPrimary">@color/dark_primary</item>
+        <item name="colorPrimaryVariant">@color/dark_primary_variant</item>
+        <item name="colorSecondary">@color/dark_secondary</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+</resources>

@@ -4,4 +4,9 @@
     <string name="btn_about">О программе</string>
     <string name="about">Лабораторная работа №7\nВыполнил: Тимур Санданов</string>
     <string name="switch_theme">Switch Theme</string>
+    <string name="theme_1">Theme 1</string>
+    <string name="theme_2">Theme 2</string>
+    <string name="theme_3">Theme 3</string>
+    <string name="material_design">Material Design в Android — это система дизайна от Google, которая обеспечивает единообразие, интуитивность и визуальную привлекательность интерфейсов. Он включает готовые компоненты (кнопки, карточки, BottomNavigation), анимации и темы, упрощая создание современного UI.</string>
+    <string name="open_thems_activity">Open Thems Activity</string>
 </resources>
